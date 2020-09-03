@@ -11,7 +11,7 @@
         <!--TextBanner-->
         <section class="ferro-description">
             <text-banner>
-                <h2>Para envío de grande volúmenes de cualquier tipo de mercancía a México y Estados Unidos.</h2>
+                <h2>Para envío de grandes volúmenes de cualquier tipo de mercancía a México y Estados Unidos.</h2>
             </text-banner>
         </section>
 
