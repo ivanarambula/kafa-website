@@ -62,7 +62,7 @@
                     <p>Por otro lado, el USUARIO, se abstendrá de suprimir, alterar, o manipular cualquier elemento, archivo, o contenido, del SITIO WEB, y por ningún motivo realizará actos tendientes a vulnerar la seguridad, los archivos o bases de datos que se encuentren protegidos, ya sea a través de un acceso restringido mediante un usuario y contraseña, o porque no cuente con los permisos para visualizarlos, editarlos o manipularlos.</p>
                     <p>En caso de que el USUARIO o algún tercero consideren que cualquiera de los contenidos del SITIO WEB suponga una violación de los derechos de protección de la propiedad industrial o intelectual, deberá comunicarlo inmediatamente a <strong>Kafá Logistics</strong> a través de los datos de contacto disponibles en el propio SITIO WEB y/o a través de los siguientes medios:</p>
                     <p>Teléfono: (646) 135 8240</p>
-                    <p>Correo electrónico: info@kafa-logistics.com</p>
+                    <p>Correo electrónico: contacto@kafa.mx</p>
 
                     <h2>VII. LEGISLACIÓN Y JURISDICCIÓN APLICABLE.</h2>
                     <p>Kafá Logistics se reserva la facultad de presentar las acciones civiles o penales que considere necesarias por la utilización indebida del SITIO WEB, sus contenidos, productos o servicios, o por el incumplimiento de los presentes TÉRMINOS Y CONDICIONES.</p>
