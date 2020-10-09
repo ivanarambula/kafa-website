@@ -1,9 +1,11 @@
 <template>
-  <default-layout>
-    <base-page>
+  <base-layout>
       <!-- SimpleHero -->
       <section class="intro">
         <simple-hero>
+          <template #cover>
+            <g-image src="../assets/images/hero-image.jpg"></g-image>
+          </template>
           <h1 class="title">Tu enlace global<br>con operación local</h1>
           <p class="description">Ofrecemos la red de servicios más robusta y flexible.</p>
           <a href="#services" class="our-services">Nuestros servicios</a>
@@ -12,7 +14,7 @@
 
       <!-- TripletColumns / Stats -->
       <section class="stats">
-          <triplet-column>
+          <triplet-columns>
             <template v-slot:left>
                 <span class="first__number">10K</span>
                 <span class="first__text">Envíos</span>
@@ -31,64 +33,69 @@
                   <span>Valiosa</span>
                 </div>
             </template>
-          </triplet-column>
+          </triplet-columns>
       </section>
 
       <!-- TripletColumns / Service Row 1 -->
       <section class="service-row-1" id="services">
-          <triplet-column>
+          <triplet-columns>
             <template v-slot:left>
-                <h2 class="service__name">Marítimo FCL</h2>
+                <span class="service__name">Marítimo FCL</span>
                 <p class="service__description">Mayor rentabilidad por volumen, seguridad y flexibilidad en la entrega de tu mercancía de importación y exportación.</p>
                 <g-link to="/services/maritime-fcl" class="service__button">Leer Más</g-link>
             </template>
             <template v-slot:middle>
+              <g-image src="../assets/images/home-grid-1.jpg"></g-image>
             </template>
             <template v-slot:right>
-                <h2 class="service__name">Marítimo LCL</h2>
+                <span class="service__name">Marítimo LCL</span>
                 <p class="service__description">Ideal para emprendedores y empresas que requieren el servicio marítimo sin la necesidad de enviar un contenedor completo.</p>
                 <g-link to="/services/maritime-lcl" class="service__button">Leer Más</g-link>
             </template>
-          </triplet-column>
+          </triplet-columns>
       </section>
 
       <!-- TripletColumns / Service Row 2 -->
       <section class="service-row-2">
-          <triplet-column>
+          <triplet-columns>
             <template v-slot:left>
+              <g-image src="../assets/images/home-grid-2.jpg"></g-image>
             </template>
             <template v-slot:middle>
-                <h2 class="service__name">Terrestre</h2>
+                <span class="service__name">Terrestre</span>
                 <p class="service__description">Total flexibilidad en rutas, equipo y tiempo de carga y descarga.</p>
                 <g-link to="/services/terrestrial" class="service__button">Leer Más</g-link>
             </template>
             <template v-slot:right>
+              <g-image src="../assets/images/home-grid-3.jpg"></g-image>
             </template>
-          </triplet-column>
+          </triplet-columns>
       </section>
 
       <!-- TripletColumns / Service Row 3 -->
       <section class="service-row-3">
-          <triplet-column>
+          <triplet-columns>
             <template v-slot:left>
-                <h2 class="service__name">Ferroviario</h2>
+                <span class="service__name">Ferroviario</span>
                 <p class="service__description">Para envío de grandes volúmenes de cualquier tipo de mercancía a México y Estados Unidos.</p>
                 <g-link to="/services/ferro" class="service__button">Leer Más</g-link>
             </template>
             <template v-slot:middle>
+              <g-image src="../assets/images/home-grid-4.jpg"></g-image>
             </template>
             <template v-slot:right>
-                <h2 class="service__name">Aéreo</h2>
+                <span class="service__name">Aéreo</span>
                 <p class="service__description">El mejor tiempo de entrega en envíos de carga seca y refrigerada a México y el mundo.</p>
                 <g-link to="/services/aerial" class="service__button">Leer Más</g-link>
             </template>
-          </triplet-column>
+          </triplet-columns>
       </section>
       
       <!--TextBanner / Contact Us-->
       <section class="contact-us">
         <text-banner>
-          <h1>CONTAMOS SOLUCIONES PARA EL MANEJO DE TU CARGA <span>EN REPOSO Y EN MOVIMIENTO</span></h1>
+          <span>Contamos soluciones para el manejo de tu carga</span>
+          <h2>en reposo y en movimiento</h2>
           <g-link to="/Contact" class="contact-btn">Contáctanos</g-link>
         </text-banner>
       </section>
@@ -97,11 +104,12 @@
       <section class="warehousing">
         <twin-columns>
           <template v-slot:left>
-            <h2 class="service__name">Almacenes</h2>
+            <span class="service__name">Almacenes</span>
             <p class="service__description">Mayor rentabilidad por volumen, seguridad y flexibilidad en la entrega de tu mercancía de importación y exportación. </p>
             <g-link to="/services/warehouse" class="service__button">Leer Más</g-link>
           </template>
           <template v-slot:right>
+            <g-image src="../assets/images/warehouse.jpg"></g-image>
           </template>
         </twin-columns>
       </section>
@@ -110,21 +118,24 @@
       <section class="patio">
         <twin-columns>
           <template v-slot:left>
+            <g-image src="../assets/images/patio.jpg"></g-image>
           </template>
           <template v-slot:right>
-            <h1 class="service__name">Patio</h1>
+            <span class="service__name">Patio</span>
             <p class="service__description">Mayor rentabilidad por volumen, seguridad y flexibilidad en la entrega de tu mercancía de importación y exportación.</p>
             <g-link to="/services/patio" class="service__button">Leer Más</g-link>
           </template>
         </twin-columns>
       </section>
-    </base-page>
-  </default-layout>
+  </base-layout>
 </template>
 
 
 <script>
-export default {
+import BaseLayout from '../layouts/BaseLayout';
+export default { 
+  name: 'Index',
+  components: { BaseLayout }, 
   metaInfo: {
     title: 'Flare Starter'
   }
@@ -135,11 +146,11 @@ export default {
 body {
   .intro {
     .simple-hero {
-      background-image: url('../assets/images/hero-image.jpg');
-      background-size: cover;
+      &__container {
+        place-content: center left;
+      }
       &__content {
-        color: white;
-        padding-top: rem(195px);
+        padding-top: rem(124px);
         span {
           text-transform: uppercase;
           letter-spacing: 2.4px;
@@ -157,6 +168,9 @@ body {
               font-size: rem(34px);
           }
         }
+        .description {
+          color: white;
+        }
         .our-services {
           @include button($brand-yellow, black);
           width: rem(250px);
@@ -169,144 +183,114 @@ body {
           position: unset;
         }
         @include respond-to("small and down") {
-          padding-top: rem(89px);
+          padding-top: 0;
+          width: 100%;
         }
         @include respond-to("medium") {
-          padding-top: rem(89px);
+          padding-top: 0;
+          width: 100%;
         }
       }
     }
   }
   .stats {
-    background-color: $brand-blue-6;
-    .triplets {
-      padding: rem(28px) 0;
-      &-section {
-        &--start, &--middle, &--end {
-          .triplets {
-            &-column {
-              align-self: center;
-              &--start, &--middle, &--end {
-                span {
-                  display: block;
-                  color: white;
-                  text-transform: uppercase;
-                  font-size: rem(25px);
-                  font-weight: 900;
-                  vertical-align: middle;
-                  &.first {
-                    &__number {
-                      font-size: rem(60px);
-                    }
-                    &__text {
-                      font-size: rem(28px);
-                    }
-                  }
-                  &.second {
-                    &__number {
-                      font-size: rem(68px);
-                      text-align: center;
-                    }
-                    &__text {
-                      text-align: center;
-                      font-size: rem(25px);
-                      &:last-child {
-                        font-size: rem(30px);
-                      }
-                    }
-                  }
-                  &.third {
-                    &__text {
-                      margin-bottom: rem(16px);
-                      font-size: rem(23px);
-                      display: inline-block;
-                      width: auto;
-                      padding: 0 rem(16px);
-                    }
-                  }
-                  @include respond-to("small and down") {
-                    line-height: 1.2;
-                  }
-                  @include respond-to("medium") {
-                    line-height: 1.2;
-                  }
-                }
-                .third {
-                  &__grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-template-rows: repeat(2, 1fr);
-                    grid-row-gap: rem(8px);
-                    grid-column-gap: rem(8px);
-                    padding: 0 rem(5px);
-                    span {
-                      font-size: rem(16px);
-                    }
-                  }
-                }
+    .triplets-columns {
+      background-color: $brand-blue-6;
+      &__section {
+        padding: rem(28px) 0;
+      }
+      &__column {
+        align-self: center;
+        span {
+          display: block;
+          color: white;
+          text-transform: uppercase;
+          font-size: rem(25px);
+          font-weight: 900;
+          vertical-align: middle;
+          &.first {
+            &__number {
+              font-size: rem(60px);
+            }
+            &__text {
+              font-size: rem(28px);
+            }
+          }
+          &.second {
+            &__number {
+              font-size: rem(68px);
+              text-align: center;
+            }
+            &__text {
+              text-align: center;
+              font-size: rem(25px);
+              &:last-child {
+                font-size: rem(30px);
               }
             }
+          }
+          @include respond-to("small and down") {
+            line-height: 1.2;
+          }
+          @include respond-to("medium") {
+            line-height: 1.2;
+          }
+        }
+        .third {
+          &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-row-gap: rem(8px);
+            grid-column-gap: rem(8px);
+            padding: 0 rem(5px);
+            span {
+              font-size: rem(16px);
+            }
+          }
+          &__text {
+            margin-bottom: rem(16px);
+            font-size: rem(23px);
+            display: inline-block;
+            width: auto;
+            padding: 0 rem(16px);
           }
         }
       }
       @include respond-to("small and down") {
         grid-row-gap: rem(34px);
-        &-section {
-          &--start, &--middle, &--end {
-            .triplets {
-              &-column {
-                align-self: center;
-                &--start, &--middle, &--end {
-                  span {
-                    text-align: center;
-                    &.third {
-                      &__text {
-                        display: block;
-                        padding: 0;
-                        margin-bottom: rem(8px);
-                      }
-                    }
-                  }
-                  .third {
-                    &__grid {
-                      grid-template-columns: repeat(1, 1fr);
-                      grid-template-rows: repeat(1, 1fr);
-                      grid-row-gap: rem(8px);
-                    }
-                  }
-                }
-              }
+        padding: rem(28px) 0;
+        &__section {
+          text-align: center;
+          padding: 0;
+        }
+        &__column {
+          .third {
+            &__grid {
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(1, 1fr);
+              grid-row-gap: rem(8px);
+            }
+            &__text {
+              margin-bottom: rem(8px);
             }
           }
         }
       }
       @include respond-to("medium") {
         grid-row-gap: rem(34px);
-        &-section {
-          &--start, &--middle, &--end {
-            .triplets {
-              &-column {
-                align-self: center;
-                &--start, &--middle, &--end {
-                  span {
-                    text-align: center;
-                    &.third {
-                      &__text {
-                        display: block;
-                        padding: 0;
-                        margin-bottom: rem(8px);
-                      }
-                    }
-                  }
-                  .third {
-                    &__grid {
-                      grid-template-columns: repeat(1, 1fr);
-                      grid-template-rows: repeat(1, 1fr);
-                      grid-row-gap: rem(8px);
-                    }
-                  }
-                }
-              }
+        align-self: center;
+        padding: rem(28px) 0;
+        text-align: center;
+        &__section {
+          padding: 0;
+        }
+        &__column {
+          .third {
+            &__grid {
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(1, 1fr);
+              grid-row-gap: rem(8px);
             }
           }
         }
@@ -314,73 +298,36 @@ body {
     }
   }
   .service-row-1, .service-row-2, .service-row-3 {
-    .triplets {
-      &-section {
+    .triplets-columns {
+      &__column {
+        padding: rem(24px);
         &--start, &--middle, &--end {
-          .triplets {
-            &-column {
-              &--start, &--middle, &--end {
-                .service {
-                  &__name {
-                    color: white;
-                    text-transform: uppercase;
-                    font-weight: 900;
-                    border-bottom: 3px solid $brand-orange;
-                    padding-bottom: rem(16px);
-                    display: inline-block;
-                  }
-                  &__description {
-                    color: white;
-                    @include respond-to("large and up") {
-                      width: 85%;
-                    }
-                  }
-                  &__button {
-                    @include button($brand-yellow, black);
-                    width: auto;
-                    padding: rem(12px);
-                    text-transform: uppercase;
-                    text-align: center;
-                    text-decoration: none;
-                    font-weight: 900;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .service-row-1, .service-row-3 {
-    background-color: $brand-blue-5;
-    .triplets {
-      &-section {
-        &--start {
-          .triplets {
-            &-column {
-              &--start {
-                padding: rem(24px);
-              }
-            }
-          }
-        }
-        &--middle {
           height: rem(400px);
-          .triplets {
-            &-column {
-              &--middle {
-                padding: 0;
+          .service {
+            &__name {
+              font-size: rem(21px);
+              color: white;
+              text-transform: uppercase;
+              font-weight: 900;
+              border-bottom: 3px solid $brand-orange;
+              padding-bottom: rem(16px);
+              margin: 0 0 16px;
+              display: inline-block;
+            }
+            &__description {
+              color: white;
+              @include respond-to("large and up") {
+                width: 85%;
               }
             }
-          }
-        }
-        &--end {
-          .triplets {
-            &-column {
-              &--end {
-                padding: rem(24px);
-              }
+            &__button {
+              @include button($brand-yellow, black);
+              width: auto;
+              padding: rem(12px);
+              text-transform: uppercase;
+              text-align: center;
+              text-decoration: none;
+              font-weight: 900;
             }
           }
         }
@@ -388,117 +335,120 @@ body {
     }
   }
   .service-row-1 {
-    background-color: $brand-blue-5;
-    .triplets {
-      &-section {
+    .triplets-columns {
+      background-color: $brand-blue-5;
+      &__column {
         &--start {
-          .triplets {
-            &-column {
-              &--start {
-                background-color: $brand-blue-4;
-              }
-            }
-          }
+          background-color: $brand-blue-4;
         }
         &--middle {
-          background-image: url('../assets/images/home-grid-1.jpg');
-          background-size: cover;
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
         &--end {
-          .triplets {
-            &-column {
-              &--end {
-                background-color: $brand-blue-7;
-              }
-            }
+          background-color: $brand-blue-7;
+        }
+        @include respond-to("small and down") {
+          &--start, &--end {
+            height: unset;
+          }
+        }
+        @include respond-to("medium") {
+          &--start, &--end {
+            height: auto;
           }
         }
       }
     }
   }
   .service-row-2 {
-    background-color: $brand-blue-7;
-    .triplets {
-      &-section {
+    .triplets-columns {
+      background-color: $brand-blue-7;
+      &__column {
         &--start {
-          height: rem(400px);
-          .triplets {
-            &-column {
-              &--start {
-                padding: 0;
-                background-image: url('../assets/images/home-grid-2.jpg');
-                background-size: cover;
-              }
-            }
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
         &--middle {
-          .triplets {
-            &-column {
-              &--middle {
-                padding: rem(24px);
-                background-color: $brand-blue-3;
-              }
-            }
-          }
+          background-color: $brand-blue-3;
         }
         &--end {
-          height: rem(400px);
-          .triplets {
-            &-column {
-              &--end {
-                padding: 0;
-                background-image: url('../assets/images/home-grid-3.jpg');
-                background-size: cover;
-              }
-            }
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        @include respond-to("small and down") {
+          &--middle {
+            height: auto;
+          }
+        }
+        @include respond-to("medium") {
+          &--middle {
+            height: auto;
           }
         }
       }
     }
   }
   .service-row-3 {
-    .triplets {
-      &-section {
+    .triplets-columns {
+      background-color: $brand-blue-5;
+      &__column {
         &--start {
-          .triplets {
-            &-column {
-              &--start {
-                background-color: $brand-blue-2;
-              }
-            }
-          }
+          background-color: $brand-blue-2;
         }
         &--middle {
-          background-image: url('../assets/images/home-grid-4.jpg');
-          background-size: cover;
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
         &--end {
-          .triplets {
-            &-column {
-              &--end {
-                background-color: $brand-blue-3;
-              }
-            }
+          background-color: $brand-blue-3;
+        }
+        @include respond-to("small and down") {
+          &--start, &--end {
+            height: auto;
+          }
+        }
+        @include respond-to("medium") {
+          &--start, &--end {
+            height: auto;
           }
         }
       }
     }
   }
   .contact-us {
-    background-color: $brand-blue-6;
     .text-banner {
       padding: rem(124px) 0;
-      h1 {
+      background-color: $brand-blue-6;
+      span {
+        display: block;
+        font-size: rem(24px);
+        line-height: 1;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: rem(24px);
+      }
+      h2 {
         color: white;
         font-weight: 900;
         margin-bottom: rem(30px);
-        span {
-          display: block;
-          margin-top: rem(24px);
-          font-size: rem(40px);
-          line-height: 1;
-        }
+        text-transform: uppercase;
       }
       .contact-btn {
         @include button($brand-yellow, black);
@@ -509,6 +459,74 @@ body {
         text-align: center;
         text-decoration: none;
         font-weight: 900;
+      }
+    }
+  }
+
+  .warehousing, .patio {
+    .twin-columns {
+      height: rem(336px);
+      @include respond-to("small and down") {
+        height: unset;
+      }
+      @include respond-to("medium") {
+        height: unset;
+      }
+      .twins {
+        &-section {
+          &--start, &--end {
+            .twins {
+              &-column {
+                &--start, &--end {
+                  .service {
+                    &__name {
+                      font-size: rem(21px);
+                      color: white;
+                      text-transform: uppercase;
+                      font-weight: 900;
+                      border-bottom: 3px solid $brand-orange;
+                      margin: 0 0 16px;
+                      padding-bottom: rem(16px);
+                      display: inline-block;
+                    }
+                    &__description {
+                      color: white;
+                      @include respond-to("large and up") {
+                        width: 85%;
+                      }
+                    }
+                    &__button {
+                      @include button($brand-yellow, black);
+                      width: auto;
+                      padding: rem(12px);
+                      text-transform: uppercase;
+                      text-align: center;
+                      text-decoration: none;
+                      font-weight: 900;
+                    }
+                  }
+                  img {
+                    /*
+                    height: rem(336px);
+                    @include respond-to("small and down") {
+                      height: unset;
+                    }
+                    @include respond-to("medium") {
+                      height: unset;
+                    }
+                    */
+                  }
+                }
+              }
+            }
+            @include respond-to("small and down") {
+              height: rem(336px);
+            }
+            @include respond-to("medium") {
+              height: rem(336px);
+            }
+          }
+        }
       }
     }
   }
@@ -536,12 +554,16 @@ body {
             }
           }
           &--end {
-            background-image: url('../assets/images/warehouse.jpg');
-            background-size: cover;
+            padding: 0;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
             .twins {
               &-column {
+                width: 100%;
                 &--end {
-                  //width: 100%;
                   padding: 0;
                 }
               }
@@ -557,12 +579,16 @@ body {
       .twins {
         &-section {
           &--start {
-            background-image: url('../assets/images/patio.jpg');
-            background-size: cover;
+            padding: 0;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
             .twins {
               &-column {
+                width: 100%;
                 &--start {
-                  //width: 100%;
                   padding: 0;
                 }
               }
@@ -573,71 +599,7 @@ body {
               &-column {
                 &--end {
                   width: rem(336px);
-                  justify-self: left;
                   padding: rem(24px);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-    .warehousing, .patio {
-    .twin-columns {
-      height: rem(336px);
-      @include respond-to("small and down") {
-        height: unset;
-      }
-      @include respond-to("medium") {
-        height: unset;
-      }
-      .twins {
-        &-section {
-          &--start, &--end {
-            @include respond-to("small and down") {
-              height: rem(336px);
-            }
-            @include respond-to("medium") {
-              height: rem(336px);
-            }
-            .twins {
-              &-column {
-                &--start, &--end {
-                  .service {
-                    &__name {
-                      color: white;
-                      text-transform: uppercase;
-                      font-weight: 900;
-                      border-bottom: 3px solid $brand-orange;
-                      padding-bottom: rem(16px);
-                      display: inline-block;
-                    }
-                    &__description {
-                      color: white;
-                      @include respond-to("large and up") {
-                        width: 85%;
-                      }
-                    }
-                    &__button {
-                      @include button($brand-yellow, black);
-                      width: auto;
-                      padding: rem(12px);
-                      text-transform: uppercase;
-                      text-align: center;
-                      text-decoration: none;
-                      font-weight: 900;
-                    }
-                  }
-                  img {
-                    height: rem(336px);
-                    @include respond-to("small and down") {
-                      height: unset;
-                    }
-                    @include respond-to("medium") {
-                      height: unset;
-                    }
-                  }
                 }
               }
             }

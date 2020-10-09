@@ -1,6 +1,5 @@
 <template>
-  <default-layout>
-    <base-page>
+    <base-layout>
 
         <!--Single Column / Text-->
         <section class="legal">
@@ -39,45 +38,17 @@
                 </section>
             </slim-column>
         </section>
-    </base-page>
-  </default-layout>
+    </base-layout>
 </template>
 
 
 <script>
+import BaseLayout from '../layouts/BaseLayout';
 export default {
+  name: 'privacy',
+  components: { BaseLayout }, 
   metaInfo: {
     title: 'Flare Starter'
   }
 }
 </script>
-
-<style lang="scss">
-body {
-    .legal {
-        background-color: $brand-blue-5;
-        padding: $gutter-xxlarge 0;
-        .slim-column {
-            color: white;
-            img {
-                margin-bottom: $gutter-large;
-            }
-            .title {
-                color: white;
-                font-size: 48px;
-                font-weight: 900;
-                text-transform: uppercase;
-                text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.51);
-            }
-            h2 {
-                color: white;
-                font-weight: 900;
-            }
-            ul {
-                margin-bottom: $gutter;
-            }
-        }
-    }
-
-}
-</style>
