@@ -7,13 +7,13 @@ $brand-blue-4: #041E60;
 $brand-blue-5: #0A1D43;
 $brand-blue-6: #071530;
 $brand-blue-7: #010A1B;
+$brand-black: #000000;
 
 // app specific tokens
 $brand-primary: $brand-blue-1;
 $brand-white: white;
 $brand-secondary: #071530;
 $page-background-color: $brand-blue-6;
-
 
 //typeface
 $text-font: 'Nunito Sans', sans-serif;
@@ -25,6 +25,8 @@ $header-background-color: $brand-blue-1;
 $navigation-text-decoration: none;
 $navigation-text-color: white;
 $navigation-text-color-hover: $brand-yellow;
+$header-nav-hover-color: $brand-yellow;
+$header-nav-active-color: $brand-yellow;
 
 //mobile nav
 $header-nav-default-color: $brand-blue-6;
@@ -32,7 +34,7 @@ $navigation-text-color: white;
 $navigation-text-color-hover: $brand-yellow;
 
 //footer
-$footer-background-color: $brand-blue-1;
+$footer-background-color: $brand-black;
 
 
 
