@@ -94,8 +94,8 @@
         }
       }
       span {
-        margin-bottom: 0.5rem;
-        align-self: center;
+          margin-bottom: 0.5rem;
+          align-self: center;
       }
        @include respond-to("small and down") {
       text-align: center;

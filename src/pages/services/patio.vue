@@ -56,7 +56,6 @@
     </service-layout>
 </template>
 
-
 <script>
 import ServiceLayout from '../../layouts/ServiceLayout';
 export default {

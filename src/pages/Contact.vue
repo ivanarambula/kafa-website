@@ -48,7 +48,7 @@ body {
                 margin: 0 0 16px;
             }
             p {
-                color: white;
+                    color: white;
                 span {
                     font-weight: 900;
                     text-transform: uppercase;

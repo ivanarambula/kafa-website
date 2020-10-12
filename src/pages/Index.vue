@@ -183,8 +183,8 @@ body {
           position: unset;
         }
         @include respond-to("small and down") {
-          padding-top: 0;
-          width: 100%;
+            padding-top: 0;
+            width: 100%;
         }
         @include respond-to("medium") {
           padding-top: 0;

@@ -82,6 +82,9 @@
             .simple-hero {
                 &__container {
                     place-content: start left;
+                    @include respond-to("small and down") {
+                      place-content: center left;
+                    }
                 }
                 &__content {
                     color: white;
